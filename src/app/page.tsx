@@ -1,6 +1,9 @@
 import Link from "next/link";
 import { db } from "~/server/db";
 
+// this makes the page dynamic so that every refresh fetches the page again
+export const dynamic = "force-dynamic";
+
 const mockUrls = [
   "https://utfs.io/f/b1215519-4152-41a6-b65f-41f485ccf051-i906yh.png",
   "https://utfs.io/f/314978aa-7011-486d-9fab-bab54f31b1fb-i906wt.png",
