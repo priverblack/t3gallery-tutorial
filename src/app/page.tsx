@@ -4,36 +4,21 @@ import { db } from "~/server/db";
 // this makes the page dynamic so that every refresh fetches the page again
 export const dynamic = "force-dynamic";
 
-const mockUrls = [
-  "https://utfs.io/f/b1215519-4152-41a6-b65f-41f485ccf051-i906yh.png",
-  "https://utfs.io/f/314978aa-7011-486d-9fab-bab54f31b1fb-i906wt.png",
-  "https://utfs.io/f/39a6e40d-7f2b-4f26-8cd7-1dc92b6f561b-i906aa.png",
-  "https://utfs.io/f/d5993950-a606-4306-833c-24e9a741cfa2-i9069b.png",
-];
-
-const mockImages = mockUrls.map((url, index) => ({
-  id: index + 1,
-  url,
-}));
-
 export default async function HomePage() {
-  const posts = await db.query.posts.findMany();
+  const images = await db.query.images.findMany({
+    orderBy: (model, { desc }) => desc(model.id),
+  });
 
-  console.log({ posts });
+  console.log({ images });
 
   return (
     <main className="">
       <div className="flex flex-wrap gap-4">
-        {posts.map((post) => (
-          <div key={post.id}>{post.name}</div>
+        {[...images].map((image, index) => (
+          <div key={image.id + "-" + index} className="w-48">
+            <img src={image.url} />
+          </div>
         ))}
-        {[...mockImages, ...mockImages, ...mockImages, ...mockImages].map(
-          (image, index) => (
-            <div key={image.id + "-" + index} className="w-48">
-              <img src={image.url} />
-            </div>
-          ),
-        )}
       </div>
       Hello (gallery in progress)
     </main>
