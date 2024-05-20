@@ -6,12 +6,19 @@ await import("./src/env.js");
 
 /** @type {import("next").NextConfig} */
 const config = {
-  typescript:{
+  images: {
+    remotePatterns: [
+      {
+        hostname: "utfs.io",
+      },
+    ],
+  },
+  typescript: {
     ignoreBuildErrors: true,
   },
   eslint: {
-    ignoreDuringBuilds: true
-  }
+    ignoreDuringBuilds: true,
+  },
 };
 
 export default config;
