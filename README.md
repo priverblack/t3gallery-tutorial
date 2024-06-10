@@ -12,9 +12,11 @@
 - [x] "taint" (server-only)
 - [x] Use Next/Image component
 - [x] Error management (w/ Sentry)
-- [ ] Routing/image page(parallel route)
-- [ ] Delete button (w/ Server Actions)
+- [x] Routing/image page(parallel route)
+- [x] Update upload button
+- [x] Shadcn/ui (toasts)
 - [ ] Analytics (postHog)
+- [ ] Delete button (w/ Server Actions)
 - [ ] Ratelimiting (upstash)
 
-<!-- 1:23 -->
+<!-- 2:26 -->
