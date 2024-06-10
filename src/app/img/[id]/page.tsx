@@ -1,4 +1,4 @@
-import FullPageImageView from "~/components/full-image-page";
+import FullPageImageView from "~/common/full-image-page";
 
 export default function ImagePage({
   params: { id: imageId },
