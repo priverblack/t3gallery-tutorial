@@ -22,13 +22,14 @@ async function Images() {
               alt={image.name}
             />
           </Link>
+          <div>{image.name}</div>
         </div>
       ))}
     </div>
   );
 }
 
-export default function HomePage() {
+export default async function HomePage() {
   return (
     <main className="">
       <SignedOut>
