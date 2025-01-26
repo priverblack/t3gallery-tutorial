@@ -31,7 +31,7 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <CSPostHogProvider>
-        <html lang="en">
+        <html lang="en" className="dark">
           <NextSSRPlugin
             /**
              * The `extractRouterConfig` will extract **only** the route configs
@@ -41,8 +41,8 @@ export default function RootLayout({
              */
             routerConfig={extractRouterConfig(ourFileRouter)}
           />
-          <body className={`font-sans ${inter.variable} dark`}>
-            <div className="grid h-screen grid-rows-[auto,1fr]">
+          <body className={`font-sans ${inter.variable}`}>
+            <div className="grid h-screen grid-rows-[auto_1fr]">
               <TopNav />
               <main className="overflow-y-scroll">{children}</main>
             </div>
